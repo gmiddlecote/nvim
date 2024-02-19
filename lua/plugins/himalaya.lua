@@ -1,0 +1,3 @@
+return {
+  "soywod/himalaya.vim",
+}
