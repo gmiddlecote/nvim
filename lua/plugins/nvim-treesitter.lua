@@ -31,7 +31,6 @@ return {
           "typescript",
           "tsx",
           "yaml",
-          "http",
           "html",
           "css",
           "prisma",
@@ -45,8 +44,6 @@ return {
           "dockerfile",
           "gitignore",
           "query",
-          "rust",
-          "sql",
         },
         incremental_selection = {
           enable = true,
