@@ -47,4 +47,37 @@ end
 -- vim.o.winbar =
 --  " %{%v:lua.vim.fn.expand('%F')%}  %{%v:lua.require'nvim-navic'.get_location()%}"
 
+-- Crate
+vim.api.nvim_create_autocmd("BufRead", {
+  group = vim.api.nvim_create_augroup("CmpSourceCargo", { clear = true }),
+  pattern = "Cargo.toml",
+  callback = function()
+    cmp.setup.buffer({ sources = { { name = "crates" } } })
+  end,
+})
+
+-- vim.keymap.set("n", "K", show_documentation, { silent = true })
+
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
+
+local rt = require("rust-tools")
+rt.setup({
+  server = {
+    on_attach = function(_, bufnr)
+      -- Hover actions
+      vim.keymap.set(
+        "n",
+        "<C-space>",
+        rt.hover_actions.hover_actions,
+        { buffer = bufnr }
+      )
+      -- Code action groups
+      vim.keymap.set(
+        "n",
+        "<Leader>a",
+        rt.code_action_group.code_action_group,
+        { buffer = bufnr }
+      )
+    end,
+  },
+})

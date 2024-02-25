@@ -2,8 +2,20 @@ return {
   "hrsh7th/nvim-cmp",
   event = "InsertEnter",
   dependencies = {
-    "hrsh7th/cmp-buffer", -- source for text in buffer
-    "hrsh7th/cmp-path", -- source for file system paths
+    -- Completion framework:
+    "hrsh7th/nvim-cmp",
+
+    -- LSP completion source:
+    "hrsh7th/cmp-nvim-lsp",
+
+    -- Useful completion sources:
+    "hrsh7th/cmp-nvim-lua",
+    "hrsh7th/cmp-nvim-lsp-signature-help",
+    "hrsh7th/cmp-vsnip",
+    "hrsh7th/cmp-path",
+    "hrsh7th/cmp-buffer",
+    "hrsh7th/vim-vsnip",
+
     "L3MON4D3/LuaSnip", -- snippet engine
     "saadparwaiz1/cmp_luasnip", -- for autocompletion
     "rafamadriz/friendly-snippets", -- useful snippets
@@ -44,6 +56,7 @@ return {
         { name = "luasnip" }, -- snippets
         { name = "buffer" }, -- text within current buffer
         { name = "path" }, -- file system paths
+        { name = "crates" }, -- autocomplete for crates in Cargo.toml
         -- { name = "cody" }, -- added cody
       }),
       -- configure lspkind for vs-code like pictograms in completion menu

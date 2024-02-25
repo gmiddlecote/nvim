@@ -1,10 +1,10 @@
 return {
   {
     --    "bluz71/vim-nightfly-guicolors",
-    -- "catppuccin/nvim",
+    "catppuccin/nvim",
     -- name = "catppuccin",
     -- "savq/melange-nvim",
-    "ellisonleao/gruvbox.nvim",
+    -- "ellisonleao/gruvbox.nvim",
     -- config = true,
     opts = ...,
     priority = 1000, -- make sure to load this before all the other start plugins
