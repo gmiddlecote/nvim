@@ -58,6 +58,7 @@ return {
         { name = "path" }, -- file system paths
         { name = "crates" }, -- autocomplete for crates in Cargo.toml
         -- { name = "cody" }, -- added cody
+        { name = "orgmode" },
       }),
       -- configure lspkind for vs-code like pictograms in completion menu
       formatting = {
