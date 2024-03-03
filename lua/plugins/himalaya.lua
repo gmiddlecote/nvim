@@ -1,3 +1,3 @@
-return {
+return { {
   "soywod/himalaya.vim",
-}
+} }

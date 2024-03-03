@@ -1,3 +1,5 @@
-return { {
-  "arduino/arduino-language-server",
-} }
+return {
+    {
+        "arduino/arduino-language-server",
+    },
+}

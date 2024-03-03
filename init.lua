@@ -14,9 +14,7 @@ vim.keymap.set("n", "<leader>a", "<cmd>AerialToggle!<CR>")
 
 -- lvim.builtin.treesitter.rainbow.enable = true
 
--- vim.opt.termguicolors = true
--- vim.cmd.colorscheme("melange")
--- require("weather").setup({})
+vim.cmd.colorscheme("kanagawa-wave")
 
 local function status_line()
   local mode = "%-5{%v:lua.string.upper(v:lua.vim.fn.mode())%}"
@@ -59,25 +57,3 @@ vim.api.nvim_create_autocmd("BufRead", {
 -- vim.keymap.set("n", "K", show_documentation, { silent = true })
 
 vim.o.winbar = "%{%v:lua.require'nvim-navic'.get_location()%}"
-
-local rt = require("rust-tools")
-rt.setup({
-  server = {
-    on_attach = function(_, bufnr)
-      -- Hover actions
-      vim.keymap.set(
-        "n",
-        "<C-space>",
-        rt.hover_actions.hover_actions,
-        { buffer = bufnr }
-      )
-      -- Code action groups
-      vim.keymap.set(
-        "n",
-        "<Leader>a",
-        rt.code_action_group.code_action_group,
-        { buffer = bufnr }
-      )
-    end,
-  },
-})
